@@ -1,18 +1,25 @@
 <footer class="footer">
   <div class="container footer-grid">
-    <div>
-      <h4>{{ store.name }}</h4>
-      <p>{{ store.description }}</p>
+    <div class="footer-brand">
+      <a class="logo" href="{{ store.url }}">{{ store.name }}</a>
+      <ul class="social">
+        {% if store.facebook %}<li><a href="{{ store.facebook }}">Facebook</a></li>{% endif %}
+        {% if store.instagram %}<li><a href="{{ store.instagram }}">Instagram</a></li>{% endif %}
+        {% if store.tiktok %}<li><a href="{{ store.tiktok }}">TikTok</a></li>{% endif %}
+      </ul>
     </div>
-    <div>
-      <h4>Institucional</h4>
+    <details open class="footer-col">
+      <summary>Mais sobre {{ store.name }}</summary>
       {% for item in navigation %}<a href="{{ item.url }}">{{ item.name }}</a>{% endfor %}
-    </div>
-    <div>
-      <h4>Contato</h4>
-      {% if store.email %}<a href="mailto:{{ store.email }}">{{ store.email }}</a>{% endif %}
+    </details>
+    <details open class="footer-col">
+      <summary>Atendimento</summary>
       {% if store.whatsapp %}<a href="{{ store.whatsapp }}">WhatsApp</a>{% endif %}
-    </div>
+      {% if store.email %}<a href="mailto:{{ store.email }}">{{ store.email }}</a>{% endif %}
+    </details>
   </div>
-  <div class="container copyright">© {{ "now" | date("Y") }} {{ store.name }}. Todos os direitos reservados.</div>
+  <div class="container copyright">
+    <span>© {{ "now" | date("Y") }} {{ store.name }}. Todos os direitos reservados.</span>
+    <span class="payments">Visa · Mastercard · Elo · Amex · Pix</span>
+  </div>
 </footer>
