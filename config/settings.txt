@@ -1,0 +1,23 @@
+tab Cores
+  title Cores da loja
+  color primary_color
+  color accent_color
+  color background_color
+  color text_color
+
+tab Topo e Banner
+  title Barra de avisos
+  text announcement_text
+  title Banner principal
+  image hero_image
+  text hero_title
+  text hero_subtitle
+  text hero_button
+
+tab Home
+  title Produtos em destaque
+  text home_products_title
+  select products_per_row
+    option 2
+    option 3
+    option 4
